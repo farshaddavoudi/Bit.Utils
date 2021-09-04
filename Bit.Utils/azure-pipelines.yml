@@ -44,6 +44,8 @@ steps:
   inputs:
     command: pack
     packagesToPack: $(PathToNugetProjects)
+    includeReferencedProjects: true
+    includeSymbols: true
 
     #task: NuGet push nuget.org
     #link: https://stackoverflow.com/questions/52920786/publish-nuget-package-using-azure-devops
