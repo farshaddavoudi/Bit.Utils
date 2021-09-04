@@ -1,7 +1,7 @@
-﻿using Autofac;
+﻿using System.Reflection;
+using Autofac;
 using Bit.Core.Contracts;
 using Bit.Model.Contracts;
-using System.Reflection;
 
 namespace Bit.Utils.Extensions
 {
