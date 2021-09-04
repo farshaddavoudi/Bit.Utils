@@ -6,12 +6,12 @@ namespace Bit.Utils.Models
 {
     public class ModelErrorWrapper
     {
-        public List<NIOCModelError> Errors { get; set; } = new();
+        public List<AppModelError> Errors { get; set; } = new();
     }
 
-    public class NIOCModelError
+    public class AppModelError
     {
-        public NIOCModelError()
+        public AppModelError()
         {
             Property = "*";
         }
