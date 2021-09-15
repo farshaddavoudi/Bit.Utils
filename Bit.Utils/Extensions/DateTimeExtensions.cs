@@ -125,6 +125,62 @@ namespace Bit.Utils.Extensions
         }
 
         /// <summary>
+        /// Compare dates with each other in a very easy way. Only dates (without time portion) will be compared in this method
+        /// </summary>
+        /// <param name="jalaliDate1"></param>
+        /// <param name="jalaliDate2"></param>
+        /// <returns></returns>
+        public static bool IsGreaterOrEqualThan(this string jalaliDate1, string jalaliDate2)
+        {
+            return DateTime.Compare(jalaliDate2.ToDateTime(), jalaliDate1.ToDateTime()) <= 0;
+        }
+
+        /// <summary>
+        /// Compare dates with each other in a very easy way.
+        /// </summary>
+        /// <param name="dateTime1"></param>
+        /// <param name="dateTime2"></param>
+        /// <param name="ignoreTimes"></param>
+        /// <returns></returns>
+        public static bool IsGreaterOrEqualThan(this DateTime dateTime1, DateTime dateTime2, bool ignoreTimes = true)
+        {
+            if (ignoreTimes)
+            {
+                return DateTime.Compare(dateTime2.Date, dateTime1.Date) <= 0;
+            }
+
+            return DateTime.Compare(dateTime2, dateTime1) <= 0;
+        }
+
+        /// <summary>
+        /// Compare dates with each other in a very easy way. Not including equal dates. Only dates (without time portion) will be compared in this method
+        /// </summary>
+        /// <param name="jalaliDate1"></param>
+        /// <param name="jalaliDate2"></param>
+        /// <returns></returns>
+        public static bool IsGreaterThan(this string jalaliDate1, string jalaliDate2)
+        {
+            return DateTime.Compare(jalaliDate2.ToDateTime(), jalaliDate1.ToDateTime()) < 0;
+        }
+
+        /// <summary>
+        /// Compare dates with each other in a very easy way. Not including equal dates.
+        /// </summary>
+        /// <param name="dateTime1"></param>
+        /// <param name="dateTime2"></param>
+        /// <param name="ignoreTimes"></param>
+        /// <returns></returns>
+        public static bool IsGreaterThan(this DateTime dateTime1, DateTime dateTime2, bool ignoreTimes = true)
+        {
+            if (ignoreTimes)
+            {
+                return DateTime.Compare(dateTime2.Date, dateTime1.Date) < 0;
+            }
+
+            return DateTime.Compare(dateTime2, dateTime1) < 0;
+        }
+
+        /// <summary>
         /// Check if a string time is in valid format
         /// </summary>
         /// <param name="strTime"></param>
